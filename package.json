@@ -1,0 +1,16 @@
+{
+  "name": "xayuda",
+  "version": "1.0.0",
+  "description": "Lista de contactos que ofrecen ayuda",
+  "main": "core.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rykardo",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "serve-favicon": "^2.4.4"
+  }
+}

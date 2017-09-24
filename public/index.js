@@ -5,13 +5,14 @@
  var carga;
  var doc;
  var datos = {};
+ var datos2 = {};
 
  var icono="";
 
  
 
 
-$(function() {
+ $(function() {
   BotonInicio = $('#botonInicio');
   SecPrin = $('#SecInicio');
   carga = $('#cargando');
@@ -24,13 +25,13 @@ $(function() {
   $("#scroll").click(function(){
     $("html, body").animate({ scrollTop: 0 }, 600);
     return false;
-});
+  });
 
 });
 
 
 
-function inicio(){
+ function inicio(){
 
   doc.hide();
   SecPrin.show();
@@ -60,7 +61,7 @@ function parteCarros(){
   carga.html("Cargando...");
   
   icono = "ion-android-car";
-  datosCarga(datos.carros);
+  datosCarga(datos.carros, datos2.carros);
 
   $("html, body").scrollTop(0);
 }
@@ -73,7 +74,7 @@ function parteTransportes(){
   carga.html("Cargando...");
   
   icono = "ion-android-bus";
-  datosCarga(datos.transporte);
+  datosCarga(datos.transporte, datos2.transporte);
 
   $("html, body").scrollTop(0);
 
@@ -87,7 +88,7 @@ function parteMedico(){
   carga.html("Cargando...");
   
   icono = "ion-medkit";
-  datosCarga(datos.medico);
+  datosCarga(datos.medico, datos2.medico);
 
   $("html, body").scrollTop(0);
 
@@ -101,7 +102,36 @@ function parteVarios(){
   carga.html("Cargando...");
   
   icono = "ion-wrench";
-  datosCarga(datos.varios);
+  datosCarga(datos.varios, datos2.varios);
+
+  $("html, body").scrollTop(0);
+
+}
+
+function parteOtros(){
+
+  SecPrin.hide();
+  carga.show();
+  carga.empty();
+  carga.html("Cargando...");
+  
+  icono = "ion-star";
+  datosCarga(datos2.otros, null);
+
+  $("html, body").scrollTop(0);
+
+}
+
+
+function parteDormir(){
+
+  SecPrin.hide();
+  carga.show();
+  carga.empty();
+  carga.html("Cargando...");
+  
+  icono = "ion-coffee";
+  datosCarga(datos2.dormir, null);
 
   $("html, body").scrollTop(0);
 
@@ -114,8 +144,8 @@ function partePsico(){
   carga.empty();
   carga.html("Cargando...");
   
-  icono = "ion-compose";
-  datosCarga(datos.psicologo);
+  icono = "ion-heart";
+  datosCarga(datos.psicologo, datos2.psicologo);
 
   $("html, body").scrollTop(0);
 
@@ -130,7 +160,7 @@ function parteVete(){
   carga.html("Cargando...");
   
   icono = "ion-ios-paw";
-  datosCarga(datos.veterinario);
+  datosCarga(datos.veterinario, datos2.veterinario);
 
   $("html, body").scrollTop(0);
 
@@ -144,7 +174,7 @@ function parteEduca(){
   carga.html("Cargando...");
   
   icono = "ion-edit";
-  datosCarga(datos.educacion);
+  datosCarga(datos.educacion, null);
 
   $("html, body").scrollTop(0);
 
@@ -158,26 +188,31 @@ function parteAlim(){
   carga.html("Cargando...");
   
   icono = "ion-android-restaurant";
-  datosCarga(datos.alimentos);
+  //datosCarga(datos2.alimentos);
+  //console.log(datos2.alimentos);
+  datosCarga(datos.alimentos, datos2.alimentos);
 
   $("html, body").scrollTop(0);
 }
 
 
-function datosCarga(data){
+function datosCarga(data, data2){
 
-    doc.empty();
-    doc.append(datosListaGen(data));
+  doc.empty();
+  if (data2 != null){
+  doc.append(datosListaGen(data2));
+  }
+  doc.append(datosListaGen(data));
     //console.log(datosLista(arr));
     doc.show();
     doc.addClass('animated fadeIn');
     carga.hide();
 
     //console.log(datos);
-}
+  }
 
 
-function datosCargaJuri(data){
+  function datosCargaJuri(data){
 
     //console.log(data);
 
@@ -188,86 +223,86 @@ function datosCargaJuri(data){
     doc.addClass('animated fadeIn');
     carga.hide();
     //console.log(datos);
-}
+  }
 
 
 
-function datosLista(data){
+  function datosLista(data){
 
-  var ret="";
+    var ret="";
 
-  $(data).each(function(index){
+    $(data).each(function(index){
 
-    var base = 
-    "<div class='row justify-content-center informacionMarco'>"+
-    "<div class='col-sm-5'> "+
-    "<div class='imagen'> "+
-    "<span class='ion-person-stalker'></span> "+
-    "</div> "+
-    "</div> "+
-    "<div class='col-sm-5'> "+
-    "<div class='texto'> "+
-    "<h4>"+data[index][0]+"</h4> "+
-    "<p>"+data[index][1]+" , "+ data[index][2] +" , "+ data[index][3] +"</p> "+
-    "<div class='infoCon'> "+
-    "<p>"+data[index][4] +" , "+ data[index][5]+"</p> "+
-    "<p>"+data[index][6]+"</p> "+
-    "</div> "+
-    "</div> "+
-    "</div> "+
-    "<div class='separador'></div> "+
-    "</div>";
+      var base = 
+      "<div class='row justify-content-center informacionMarco'>"+
+      "<div class='col-sm-5'> "+
+      "<div class='imagen'> "+
+      "<span class='ion-person-stalker'></span> "+
+      "</div> "+
+      "</div> "+
+      "<div class='col-sm-5'> "+
+      "<div class='texto'> "+
+      "<h4>"+data[index][0]+"</h4> "+
+      "<p>"+data[index][1]+" , "+ data[index][2] +" , "+ data[index][3] +"</p> "+
+      "<div class='infoCon'> "+
+      "<p>"+data[index][4] +" , "+ data[index][5]+"</p> "+
+      "<p>"+data[index][6]+"</p> "+
+      "</div> "+
+      "</div> "+
+      "</div> "+
+      "<div class='separador'></div> "+
+      "</div>";
 
-    ret += base;
+      ret += base;
 
-  });
+    });
 
 
-  return ret;
+    return ret;
 
-}
+  }
 
-function datosListaGen(data){
+  function datosListaGen(data){
 
-  var ret="";
+    var ret="";
 
-  $(data).each(function(index){
+    $(data).each(function(index){
 
-    var base = 
-    "<div class='row justify-content-center informacionMarco'>"+
-    "<div class='col-sm-5'> "+
-    "<div class='imagen'> "+
-    "<span class='"+icono+"'></span> "+
-    "</div> "+
-    "</div> "+
-    "<div class='col-sm-5'> "+
-    "<div class='texto'> "+
-    "<h4>"+data[index][0]+"</h4> "+
-    "<p> Servicio: "+data[index][1]+" , "+ data[index][3] +" , "+ data[index][4] + " , "+ data[index][5] +"</p> "+
-    "<div class='infoCon'> "+
-    "<p> Contacto: "+data[index][2] +"</p> "+
-    "</div> "+
-    "</div> "+
-    "</div> "+
-    "<div class='separador'></div> "+
-    "</div>";
+      var base = 
+      "<div class='row justify-content-center informacionMarco'>"+
+      "<div class='col-sm-5'> "+
+      "<div class='imagen'> "+
+      "<span class='"+icono+"'></span> "+
+      "</div> "+
+      "</div> "+
+      "<div class='col-sm-5'> "+
+      "<div class='texto'> "+
+      "<h4>"+data[index][0]+"</h4> "+
+      "<p> Servicio: "+data[index][1]+", Lugar/Ubicacion: "+ data[index][3] +"</p> "+
+      "<div class='infoCon'> "+
+      "<p> Contacto: "+data[index][2] +"</p> "+
+      "</div> "+
+      "</div> "+
+      "</div> "+
+      "<div class='separador'></div> "+
+      "</div>";
 
-    ret += base;
+      ret += base;
 
-  });
+    });
 
-  
 
-  return ret;
 
-}
+    return ret;
 
-function datosJuridico(){
+  }
 
- var spreadsheetID = "1idg6sGkXvnrrvKQtDxbC5SNeEcMERgNnD4wXYnwfXLY";
- var arr=[];
+  function datosJuridico(){
 
- 
+   var spreadsheetID = "1idg6sGkXvnrrvKQtDxbC5SNeEcMERgNnD4wXYnwfXLY";
+   var arr=[];
+
+
  var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/1/public/basic?alt=json";//"/od6/public/values?alt=json";
 
  $.getJSON(url, function(data) {
@@ -290,7 +325,7 @@ function datosJuridico(){
 
   //$('.results').append(arr);
 
-  }).done(function( json ) {
+}).done(function( json ) {
 
     //doc.empty();
     //doc.append(datosLista(arr));
@@ -309,11 +344,11 @@ function datosJuridico(){
 
 function datosGeneral(){
 
- var spreadsheetID = "1a-rZqtPUvHn-73sZEb7Epn4R9ouTiMfjPOysB-4hLYA";
+ var spreadsheetID = "1PBSEMhWjs3ZRKEmj0rPcQbPA351zJ0z8HYx46rqbS7c";
  var arr=[];
 
  
- var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/6/public/values?alt=json";//"/od6/public/values?alt=json";
+ var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/1/public/values?alt=json";//"/od6/public/values?alt=json";
 
  $.getJSON(url, function(data) {
 
@@ -325,12 +360,32 @@ function datosGeneral(){
     var tempo = entry[index].content.$t;
     var res = tempo.split(",");
 
-    var resTem = res[1].split(":");
-    var resTem2 = res[0].split(":");
 
+    //Nombre, Categoria, Datos Contacto, Ofrece, Zona, Estatus
+    //limpiar datos
+    //console.log(res);
+
+    var un = [];
+    var cade="";
+    for (el in res){
+
+      if (el >= 2){
+        cade += res[el] + ",";
+      }
+    }
+    
+    //var ret = "data-123".replace('data-','');
+    var resTem1 = res[0].replace('informacióndediversaspersonasyempresasdispuestasaayudar:','');
+    var resTem2a = res[1].replace('_cpzh4:','');
+    var resTem2 = resTem2a.replace('_cre1l:','');
+    var cad1 = cade.replace('_cre1l:','');
+    var cad2 = cad1.replace('_chk2m:','');
+    var resTem3 = cad2.replace('_ciyn3:','');
     //arr.push('<p>'+entry[index].title.$t+'</p>' + '<p>'+res[1]+'</p>');
-    var arrTem = [entry[index].title.$t, resTem2[1], resTem[1], res[2], res[3], res[4]];
+    var arrTem = [entry[index].title.$t, resTem1, resTem2, resTem3];
     arr.push(arrTem);
+
+
   });
 
   //console.log(arr);  
@@ -347,7 +402,7 @@ function datosGeneral(){
   }
   //console.log(arr[0][0]);
 
- }).done(function( json ) {
+}).done(function( json ) {
 
     //doc.empty();
     //doc.append(datosLista(arr));
@@ -357,9 +412,109 @@ function datosGeneral(){
     //console.log(arr);
     datos = datosxCategoria(arr);
 
+    //segunda seccion de carga de datos
+    datosGeneralRescate();
+
     datosJuridico();
 
   });
+
+}
+
+
+function datosGeneralRescate(){
+
+  var spreadsheetID = "1PBSEMhWjs3ZRKEmj0rPcQbPA351zJ0z8HYx46rqbS7c";
+  var arr=[];
+
+
+  var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/3/public/basic?alt=json";//"/1/public/basic?alt=json";//"/od6/public/values?alt=json";
+
+    $.getJSON(url, function(data) {
+
+    var entry = data.feed.entry;
+
+
+      $(entry).each(function(index){
+
+      var ar = entry[index].content.$t;
+
+      //ofrezconecesito: Ofrezco, queofrece: Manos, Asistencia médica, ciudad: México , delegaciónmunicipio: Ecatepec , nombre: Jessica , contacto: https://mobile.facebook.com/jerialas?ref_component=mbasic_home_header&ref_page=%2Fwap%2Fhome.php&refid=7&ref=opera_speed_dial, colonia: Emiliano Zapata, estado: México 
+
+      var res=[];
+
+      var sec = ar.split("ciudad: ");
+      var sec1 = sec[0].split("queofrece: ");
+      var sec2 = sec[1].split(",");
+
+
+      res.push(sec1[1]);
+      res.push(sec2[0]);
+
+
+      var tex = [];
+      tex[0] = ' delegaciónmunicipio: ';
+      tex[1] = ' nombre: ';
+      tex[2] = ' contacto: ';
+      tex[3] = ' colonia: ';
+      tex[4] = ' estado: ';
+
+
+
+      for (var i=0; i <= 3; i++){
+
+      var numero = sec[1].indexOf(tex[i]);
+      var numero2 = sec[1].indexOf(tex[i+1]);
+      if ( numero >= 0 ){
+
+        if (numero2 >= 0){
+          res.push(sec[1].substring(numero+tex[i].length, numero2-1));  
+        }
+        else{
+
+          res.push(sec[1].substring(numero+tex[i].length, sec[1].length));  
+        }
+      }
+      else{
+
+        res.push("");
+      }
+      }
+
+
+      var numero = sec[1].indexOf(tex[4]);
+      var numero2 = sec[1].length;
+      if ( numero >= 0){
+
+      res.push(sec[1].substring(numero+tex[4].length, numero2));  
+      }
+      else{
+
+      res.push("");
+      }
+
+
+      arr.push(res);
+
+      });
+
+
+    }).done(function() {
+
+
+        datax = [];
+
+        for (el in arr){
+
+          var d = [arr[el][3] , arr[el][0] , arr[el][4] , arr[el][1] , arr[el][2] , arr[el][5] , arr[el][6]];
+          datax.push(d);
+        }
+
+        //console.log(datax);
+        datos2 = datosxRescate(datax);
+
+    });
+
 
 }
 
@@ -384,48 +539,140 @@ function datosxCategoria(data){
 
     if (arr2.indexOf("come") >= 0 || arr2.indexOf("alim") >= 0){
 
-        arrAlimentos.push(data[el]);
+      arrAlimentos.push(data[el]);
     }
 
     //higi , insu , medi , para
     if (arr2.indexOf("higi") >= 0 || arr2.indexOf("insu") >= 0  || arr2.indexOf("medi") >= 0 || arr2.indexOf("para") >= 0 || arr2.indexOf("fune") >= 0){
 
-        arrMedico.push(data[el]);
+      arrMedico.push(data[el]);
     }
 
     if (arr2.indexOf("trans") >= 0){
 
-        arrTrans.push(data[el]);
+      arrTrans.push(data[el]);
     }
 
     if (arr2.indexOf("psico") >= 0 ){
 
-        arrPsico.push(data[el]);
+      arrPsico.push(data[el]);
     }
 
     if (arr2.indexOf("vete") >= 0){
 
-        arrVete.push(data[el]);
+      arrVete.push(data[el]);
     }
 
     if (arr2.indexOf("maqui") >= 0){
 
-        arrCarros.push(data[el]);
-        
+      arrCarros.push(data[el]);
+
     }
 
     if (arr2.indexOf("educ") >= 0){
 
-        arrEduca.push(data[el]);
+      arrEduca.push(data[el]);
     }
 
     //herr , ilum , resc , valo
     if (arr2.indexOf("herr") >= 0 || arr2.indexOf("ilum") >= 0 || arr2.indexOf("resc") >= 0 || arr2.indexOf("valo") >= 0){
 
-        arrVarios.push(data[el]);
+      arrVarios.push(data[el]);
     }
+
+  }
+
+  return { alimentos : arrAlimentos , medico : arrMedico, transporte: arrTrans, psicologo: arrPsico, veterinario: arrVete, carros: arrCarros, educacion: arrEduca, varios: arrVarios };
+}
+
+
+
+function datosxRescate(data){
+
+  var arrAlimentos = [];
+  var arrMedico = [];
+  var arrTrans = [];
+  var arrPsico = [];
+  var arrVete = [];
+  var arrCarros = [];
+  var arrEduca = [];
+  var arrVarios =[];
+  var arrOtros = [];
+  var arrDormir = [];
+
+  for (el in data){
+
+    var arr2 = data[el][1].toLowerCase();
+
+    //console.log(arr2);
+    //console.log(arr2.indexOf(" maqui"));
+
+    if (arr2.indexOf("comi") >= 0 || arr2.indexOf("agua") >= 0){
+
+      arrAlimentos.push(data[el]);
+    }
+    else
+    //higi , insu , medi , para
+    if (arr2.indexOf("cura") >= 0 || arr2.indexOf("medi") >= 0  || arr2.indexOf("asis") >= 0 || arr2.indexOf("sangre") >= 0 || arr2.indexOf("arti") >= 0 || arr2.indexOf("cubre") >= 0 || arr2.indexOf("enfer") >= 0){
+
+      arrMedico.push(data[el]);
+    }
+    else
+
+    if (arr2.indexOf("trans") >= 0){
+
+      arrTrans.push(data[el]);
+    }
+    else
+
+    if (arr2.indexOf("psicolo") >= 0 || arr2.indexOf("psico") >= 0 || arr2.indexOf("terap") >= 0 || arr2.indexOf("acompa") >= 0){
+
+      arrPsico.push(data[el]);
+    }
+    else
+
+    if (arr2.indexOf("masco") >= 0){
+
+      arrVete.push(data[el]);
+    }
+    else
+
+    if (arr2.indexOf("maqui") >= 0){
+
+      arrCarros.push(data[el]);
+
+    }
+    else
+
+    if (arr2.indexOf("refu") >= 0 || arr2.indexOf("dormir") >= 0){
+
+      arrDormir.push(data[el]);
+    }
+    else
+
+    //herr , ilum , resc , valo
+    if (arr2.indexOf("mano") >= 0 || arr2.indexOf("volun") >= 0 || arr2.indexOf("resc") >= 0 || arr2.indexOf("evalu") >= 0){
+
+      arrVarios.push(data[el]);
+    }
+    else{
+
+      arrOtros.push(data[el]);
 
     }
 
-    return { alimentos : arrAlimentos , medico : arrMedico, transporte: arrTrans, psicologo: arrPsico, veterinario: arrVete, carros: arrCarros, educacion: arrEduca, varios: arrVarios };
+  }
+
+
+   return {
+   alimentos : arrAlimentos,
+   medico : arrMedico, 
+   transporte: arrTrans, 
+   psicologo: arrPsico, 
+   veterinario: arrVete, 
+   carros: arrCarros, 
+   varios: arrVarios,
+   dormir: arrDormir,
+   otros : arrOtros
+    }
 }

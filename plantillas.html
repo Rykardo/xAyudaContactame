@@ -1,0 +1,227 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/vis.css">
+    <script type="text/javascript" src="/index.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>xAyudaContáctame</h1>
+        <button type="button" class="btn home" onclick="inicio()" id="botonInicio"><i class="ion-home"></i></button>
+        <button type="button" class="btn about"><i class="ion-ios-help-empty"></i></button>
+    </header>
+    <section class="hero">
+        <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-1">
+            <h6>Mexico 2017</h6>
+            <h2>xAyudaContáctame</h2>
+            <p>es una iniciativa para conectar directamente a personas que necesitan ayuda con aquellos que pueden dársela.</p> <a href="#">Comparte la iniciativa</a> </div> <img class="divisor" src="public/images/divisor-top.png" alt=""> 
+    </section>
+    
+    <div class="md-container hidden">
+    <div class="md-content md-share">
+        <h4>Comparte en tus redes:</h4>
+        <br>
+        <button>facebook</button>
+        <button>twitter</button>
+    </div>
+    </div>
+    
+    
+    <section class="finder bg-white">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>Encuentra ayuda</h2>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="busco">Necesito</label>
+                            <input type="text" class="form-control" id="busco" placeholder=""> </div>
+                        <div class="form-group">
+                            <label for="ubicacion"><span class="visible-xs">Estoy </span>en</label>
+                            <input type="text" class="form-control" id="ubicacion" placeholder=""> 
+                            <span class="help">ingresa tu estado, colonia o código postal</span>
+                            </div>
+                        <button type="submit" class="btn btn-lg btn-default">Encontrar ayuda</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="SecInicio" class="categorias">
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteCarros()"> <span class="ion-android-car icono"></span> Carro/Camioneta </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteTransportes()"> <span class="ion-android-bus icono"></span> Transporte </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="partePsico()"> <span class="ion-heart icono"></span> Apoyo Emocional </div>
+            </div>
+        </div>
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteMedico()"> <span class="ion-medkit icono"></span> Serv. Medicos </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteVarios()"> <span class="ion-wrench icono"></span> Voluntarios/ Maquinaria </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteJuridico()"> <span class="ion-ios-book icono"></span> Asesoria Juridica </div>
+            </div>
+        </div>
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteVete()"> <span class="ion-ios-paw icono"></span> Veterinarios </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteEduca()"> <span class="ion-edit icono"></span> Educación </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteAlim()"> <span class="ion-android-restaurant icono"></span> Alimentos </div>
+            </div>
+        </div>
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteDormir()"> <span class="ion-coffee icono"></span> Refugios/ Lugar para dormir </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteOtros()"> <span class="ion-star icono"></span> Distintas Ayudas </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- plantilla tarjeta de información-->
+    <section class="container-fluid informacion" id="informacionSec">
+        <div class="row">
+            <!--Base par diseño de informacion-->
+            <div class='col-md-4 justify-content-center informacionMarco'>
+                <div class="portlet">
+                    <div class='texto padded'>
+                        <h2 class="name">data[index][0]</h2>
+                        <p class="servicios">data[index][1]</p>
+                        <div class="list">
+                            <p><i class="ion-ios-location blue"></i> data[index][3]</p>
+                            <div class='infoCon'> <i class="ion-ios-telephone blue"></i> <span>data[index][2]</span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /plantilla tarjeta de información-->
+    
+    
+    <section id="SecInicio" class="categorias">
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteCarros()"> <span class="ion-android-car icono"></span> Carro/Camioneta </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteTransportes()"> <span class="ion-android-bus icono"></span> Transporte </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="partePsico()"> <span class="ion-heart icono"></span> Apoyo Emocional </div>
+            </div>
+        </div>
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteMedico()"> <span class="ion-medkit icono"></span> Serv. Medicos </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteVarios()"> <span class="ion-wrench icono"></span> Voluntarios/ Maquinaria </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteJuridico()"> <span class="ion-ios-book icono"></span> Asesoria Juridica </div>
+            </div>
+        </div>
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteVete()"> <span class="ion-ios-paw icono"></span> Veterinarios </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteEduca()"> <span class="ion-edit icono"></span> Educación </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteAlim()"> <span class="ion-android-restaurant icono"></span> Alimentos </div>
+            </div>
+        </div>
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteDormir()"> <span class="ion-coffee icono"></span> Refugios/ Lugar para dormir </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteOtros()"> <span class="ion-star icono"></span> Distintas Ayudas </div>
+            </div>
+        </div>
+    </section>
+    
+    
+        <!--
+    <div class="container-fluid">
+        
+        <div id="scroll"> <span class="ion-chevron-up"></span> </div>
+        <div id="cargando"></div>
+        <h3 style="color:#2e2e2e; text-align:center; margin-top:20px; ">¿Que necesitas?</h3>
+        <div class="row">
+            <div class="container-fluid inicio" id="_SecInicio">
+                <div class="row fila1">
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteCarros()"> <span class="ion-android-car icono"></span> Carro/Camioneta </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteTransportes()"> <span class="ion-android-bus icono"></span> Transporte </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="partePsico()"> <span class="ion-heart icono"></span> Apoyo Emocional </div>
+                    </div>
+                </div>
+                <div class="row fila1">
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteMedico()"> <span class="ion-medkit icono"></span> Serv. Medicos </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteVarios()"> <span class="ion-wrench icono"></span> Voluntarios/ Maquinaria </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteJuridico()"> <span class="ion-ios-book icono"></span> Asesoria Juridica </div>
+                    </div>
+                </div>
+                <div class="row fila1">
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteVete()"> <span class="ion-ios-paw icono"></span> Veterinarios </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteEduca()"> <span class="ion-edit icono"></span> Educación </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteAlim()"> <span class="ion-android-restaurant icono"></span> Alimentos </div>
+                    </div>
+                </div>
+                <div class="row fila1">
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteDormir()"> <span class="ion-coffee icono"></span> Refugios/ Lugar para dormir </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="marco" onclick="parteOtros()"> <span class="ion-star icono"></span> Distintas Ayudas </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+           
+        </div>
+    </div>
+   -->
+ <div class="md-alpha hidden"></div>   
+</body>
+<html>

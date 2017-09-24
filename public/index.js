@@ -269,23 +269,20 @@ function datosCarga(data, data2){
     $(data).each(function(index){
 
       var base = 
-      "<div class='row justify-content-center informacionMarco'>"+
-      "<div class='col-sm-5'> "+
-      "<div class='imagen'> "+
-      "<span class='"+icono+"'></span> "+
-      "</div> "+
-      "</div> "+
-      "<div class='col-sm-5'> "+
-      "<div class='texto'> "+
-      "<h4>"+data[index][0]+"</h4> "+
-      "<p> Servicio: "+data[index][1]+", Lugar/Ubicacion: "+ data[index][3] +"</p> "+
-      "<div class='infoCon'> "+
-      "<p> Contacto: "+data[index][2] +"</p> "+
-      "</div> "+
-      "</div> "+
-      "</div> "+
-      "<div class='separador'></div> "+
-      "</div>";
+    "<div class='col-md-4 justify-content-center informacionMarco'> " + 
+    "<div class='portlet'> " + 
+    "<div class='texto padded'> " + 
+    "<h2 class='name'> " + data[index][0] + "</h2> " + 
+    "<p class='servicios'> " + data[index][1] +"</p> " + 
+    "<div class='list'> " + 
+        "<p> " + "<i class='ion-ios-location blue'>" + "</i> " + data[index][3] + "</p> " + 
+        "<div class='infoCon'> " + 
+        "<i class='ion-ios-telephone blue'> " + "</i> " + "<span>" + data[index][2] + "</span> " + 
+        "</div> " + 
+    "</div> " + 
+    "</div> " + 
+    "</div> " + 
+    "</div> ";
 
       ret += base;
 

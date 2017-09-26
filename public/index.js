@@ -230,12 +230,12 @@ function datosCarga(data, data2){
     "<div class='col-md-4 justify-content-center informacionMarco'> " + 
     "<div class='portlet'> " + 
     "<div class='texto padded'> " + 
-    "<h2 class='name'> " + data[index][0] + "</h2> " + 
+    "<h4 class='name'> " + data[index][0] + "</h4> " + 
     "<p class='servicios'> " + data[index][1] +"</p> " + 
     "<div class='list'> " + 
         "<p> " + "<i class='ion-ios-location blue'>" + "</i> " + data[index][3] + "</p> " + 
         "<div class='infoCon'> " + 
-        "<i class='ion-ios-telephone blue'> " + "</i> " + "<span>" + data[index][2] + "</span> " + 
+        "<i class='ion-ios-telephone blue'> " + "</i> " + "<p>" + data[index][2] + "</p> " + 
         "</div> " + 
     "</div> " + 
     "</div> " + 

@@ -75,7 +75,9 @@
                         </div>
                         <div class="form-group">
                             <label for="ubicacion"><span class="visible-xs-inline">Estoy</span> en</label>
-                            <input type="text" class="form-control" id="ubicacion" placeholder=""> <span class="help">Ingresa tu estado o colonia</span> </div>
+                            <div class="helper">
+                            <input type="text" class="form-control styled" id="ubicacion" placeholder=""> <span class="help">Ingresa tu estado o colonia</span> </div>
+                            </div>
                         <button class="form-group btn btn-lg btn-default" onclick="busca(); return false;">Encontrar ayuda</button>
                     </form>
                 </div>
@@ -87,7 +89,8 @@
     <div id="scroll"> <span class="ion-chevron-up"></span> </div>
     <div id="cargando"></div>
     <section id="SecInicio" class="categorias">
-        <div class="row fila1">
+       <div class="container">
+            <div class="row">
             <div class="col-sm-4">
                 <div class="marco" onclick="parteCarros()"> <span class="ion-android-car icono"></span> Carro/Camioneta </div>
             </div>
@@ -97,8 +100,6 @@
             <div class="col-sm-4">
                 <div class="marco" onclick="partePsico()"> <span class="ion-heart icono"></span> Apoyo Emocional </div>
             </div>
-        </div>
-        <div class="row fila1">
             <div class="col-sm-4">
                 <div class="marco" onclick="parteMedico()"> <span class="ion-medkit icono"></span> Serv. Medicos </div>
             </div>
@@ -108,8 +109,6 @@
             <div class="col-sm-4">
                 <div class="marco" onclick="parteJuridico()"> <span class="ion-ios-book icono"></span> Asesoria Juridica </div>
             </div>
-        </div>
-        <div class="row fila1">
             <div class="col-sm-4">
                 <div class="marco" onclick="parteVete()"> <span class="ion-ios-paw icono"></span> Veterinarios </div>
             </div>
@@ -119,8 +118,6 @@
             <div class="col-sm-4">
                 <div class="marco" onclick="parteAlim()"> <span class="ion-android-restaurant icono"></span> Alimentos </div>
             </div>
-        </div>
-        <div class="row fila1">
             <div class="col-sm-4">
                 <div class="marco" onclick="parteDormir()"> <span class="ion-coffee icono"></span> Refugios/ Lugar para dormir </div>
             </div>
@@ -128,14 +125,16 @@
                 <div class="marco" onclick="parteOtros()"> <span class="ion-star icono"></span> Distintas Ayudas </div>
             </div>
         </div>
+        </div>
     </section>
     <!-- plantilla tarjeta de información-->
-    <section class="container-fluid informacion" id="informacionSec">
-        <div class="row">
+    
+    <section class="container-fluid informacion" >
+        <div class="row" id="informacionSec">
             <!--Base par diseño de informacion-->
             <div class='col-md-4 justify-content-center informacionMarco'>
                 <div class="portlet">
-                    <div class='texto padded'>
+                    <div class='texto padded text-left'>
                         <h2 class="name">data[index][0]</h2>
                         <p class="servicios">data[index][1]</p>
                         <div class="list">

@@ -39,6 +39,26 @@
   background: linear-gradient(to right, #00feb2 0%, #03d1d1 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00feb2', endColorstr='#03d1d1', GradientType=1);
 }
+.gradient-w {
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 25%, #f2f2f2 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(25%, #ffffff), color-stop(100%, #f2f2f2));
+  background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 25%, #f2f2f2 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #ffffff 25%, #f2f2f2 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #ffffff 25%, #f2f2f2 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 25%, #f2f2f2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f2f2f2', GradientType=0);
+}
+.gradient-w-2 {
+  background: #f2f2f2;
+  background: -moz-linear-gradient(top, #f2f2f2 0%, #ffffff 75%, #ffffff 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #f2f2f2), color-stop(75%, #ffffff), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(top, #f2f2f2 0%, #ffffff 75%, #ffffff 100%);
+  background: -o-linear-gradient(top, #f2f2f2 0%, #ffffff 75%, #ffffff 100%);
+  background: -ms-linear-gradient(top, #f2f2f2 0%, #ffffff 75%, #ffffff 100%);
+  background: linear-gradient(to bottom, #f2f2f2 0%, #ffffff 75%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#ffffff', GradientType=0);
+}
 body,
 html {
   font-size: 12px;
@@ -74,6 +94,46 @@ select,
   height: 44px;
   line-height: 44px;
   padding: 0 12px;
+  font-size: 1.15em;
+  border-radius: 0;
+  border: 0;
+  cursor: pointer;
+}
+.button:focus,
+.btn:focus,
+button:focus,
+input:focus,
+select:focus,
+.form-control:focus,
+.button:active,
+.btn:active,
+button:active,
+input:active,
+select:active,
+.form-control:active {
+  box-shadow: none;
+}
+.button,
+.btn,
+button,
+.styled {
+  box-shadow: 0 2px 5px rgba(1, 159, 159, 0.5);
+}
+.button:active,
+.btn:active,
+button:active,
+.styled:active,
+.button:focus,
+.btn:focus,
+button:focus,
+.styled:focus,
+.button:hover,
+.btn:hover,
+button:hover,
+.styled:hover {
+  outline: none!important;
+  box-shadow: 0 3px 8px rgba(1, 159, 159, 0.8);
+  text-shadow: 0 0 3px rgba(3, 234, 234, 0.1);
 }
 .button,
 .btn,
@@ -86,13 +146,10 @@ button {
   background: -ms-linear-gradient(left, #03d1d1 0%, #00feb2 100%);
   background: linear-gradient(to right, #03d1d1 0%, #00feb2 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#03d1d1', endColorstr='#00feb2', GradientType=1);
-  border: none;
   color: white;
   font-weight: bold;
-  border-radius: 0;
-  box-shadow: 0 3px 4px rgba(1, 159, 159, 0.5);
+  padding: 0 20px;
   display: inline-block;
-  cursor: pointer;
 }
 .button:active,
 .btn:active,
@@ -103,9 +160,29 @@ button:focus,
 .button:hover,
 .btn:hover,
 button:hover {
-  outline: none!important;
-  box-shadow: 0 3px 8px rgba(1, 159, 159, 0.8);
   color: white !important;
+}
+input.form-control {
+  border: solid 1px #03d1d1;
+}
+input.form-control:active,
+input.form-control:focus {
+  border-color: #00feb0;
+}
+.styled {
+  color: #95989A !important;
+}
+.styled:active,
+.styled:focus {
+  background: #f2f2f2 !important;
+  background: -moz-linear-gradient(top, #f2f2f2 0%, #ffffff 75%, #ffffff 100%) !important;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #f2f2f2), color-stop(75%, #ffffff), color-stop(100%, #ffffff)) !important;
+  background: -webkit-linear-gradient(top, #f2f2f2 0%, #ffffff 75%, #ffffff 100%) !important;
+  background: -o-linear-gradient(top, #f2f2f2 0%, #ffffff 75%, #ffffff 100%) !important;
+  background: -ms-linear-gradient(top, #f2f2f2 0%, #ffffff 75%, #ffffff 100%) !important;
+  background: linear-gradient(to bottom, #f2f2f2 0%, #ffffff 75%, #ffffff 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#ffffff', GradientType=0) !important;
+  box-shadow: none;
   text-shadow: 0 0 3px rgba(3, 234, 234, 0.1);
 }
 section {
@@ -223,20 +300,26 @@ form .form-group .bootstrap-select {
 }
 form .form-group input {
   width: 100% !important;
-  border: 1px solid #03d1d1;
 }
 form .form-group input:focus {
-  border-color: #00feb0;
   outline-color: #00feb0;
 }
 form .form-group .text-muted {
   color: #e6e6e6;
   color: #029f9f;
 }
+form .form-group .helper {
+  display: inline-block;
+  width: 100%;
+}
 form .form-group .help {
   color: #03d1d1;
   font-size: 0.8em;
   display: block;
+  padding-top: 5px;
+}
+form .bs-searchbox input {
+  width: 100% !important;
 }
 form button {
   float: right;
@@ -263,8 +346,23 @@ form button {
   }
   form .form-group .form-control {
     width: auto !important;
-    float: left;
   }
+  form .form-group .helper {
+    width: auto;
+  }
+}
+.informacionMarco {
+  margin-bottom: 15px;
+  height: auto;
+}
+.informacionMarco p {
+  word-wrap: break-word;
+}
+.informacionMarco texto {
+  text-align: left;
+}
+.informacionMarco texto h4 {
+  margin: 0;
 }
 .md-alpha {
   background: #00feb2;

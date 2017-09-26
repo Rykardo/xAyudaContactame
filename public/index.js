@@ -7,6 +7,12 @@
  var datos = {};
  var datos2 = {};
 
+ var datosGen1 = [];
+ var datosGen2 = [];
+ var datosGenJuri = [];
+
+ var todos = [];
+
  var icono="";
 
  
@@ -47,7 +53,7 @@ function parteJuridico(){
   carga.html("Cargando...");
   //datosJuridico();
 
-  datosCargaJuri(datos.juridico);
+  datosCarga(datos.juridico, null);
 
   $("html, body").scrollTop(0);
 
@@ -212,55 +218,7 @@ function datosCarga(data, data2){
   }
 
 
-  function datosCargaJuri(data){
 
-    //console.log(data);
-
-    doc.empty();
-    doc.append(datosLista(data));
-    //console.log(datosLista(arr));
-    doc.show();
-    doc.addClass('animated fadeIn');
-    carga.hide();
-    //console.log(datos);
-  }
-
-
-
-  function datosLista(data){
-
-    var ret="";
-
-    $(data).each(function(index){
-
-      var base = 
-      "<div class='row justify-content-center informacionMarco'>"+
-      "<div class='col-sm-5'> "+
-      "<div class='imagen'> "+
-      "<span class='ion-person-stalker'></span> "+
-      "</div> "+
-      "</div> "+
-      "<div class='col-sm-5'> "+
-      "<div class='texto'> "+
-      "<h4>"+data[index][0]+"</h4> "+
-      "<p>"+data[index][1]+" , "+ data[index][2] +" , "+ data[index][3] +"</p> "+
-      "<div class='infoCon'> "+
-      "<p>"+data[index][4] +" , "+ data[index][5]+"</p> "+
-      "<p>"+data[index][6]+"</p> "+
-      "</div> "+
-      "</div> "+
-      "</div> "+
-      "<div class='separador'></div> "+
-      "</div>";
-
-      ret += base;
-
-    });
-
-
-    return ret;
-
-  }
 
   function datosListaGen(data){
 
@@ -312,9 +270,11 @@ function datosCarga(data, data2){
     //$('.resultado')
     var tempo = entry[index].content.$t;
     var res = tempo.split(",");
+    var lugar = res[2].split(":");
+    //console.log(lugar);
 
     //arr.push('<p>'+entry[index].title.$t+'</p>' + '<p>'+res[1]+'</p>');
-    var arrTem = [entry[index].title.$t, res[0], res[1], res[2], res[3], res[4], res[5]];
+    var arrTem = [entry[index].title.$t, res[0], res[1], lugar[1], res[3], res[4], res[5]];
     arr.push(arrTem);
 
   });
@@ -324,13 +284,31 @@ function datosCarga(data, data2){
 
 }).done(function( json ) {
 
-    //doc.empty();
-    //doc.append(datosLista(arr));
-    //console.log(datosLista(arr));
-    //doc.show();
+
+
+
+    datax = [];
+
+    for (el in arr){
+
+      var d = [arr[el][0] , arr[el][1] +" "+ arr[el][2] , arr[el][4] +", "+ arr[el][5] +", "+ arr[el][6] , arr[el][3] ];
+      datax.push(d);
+    }
+    
+
+
     //carga.hide();
-    datos.juridico = arr;
+    datos.juridico = datax;
     carga.hide();
+
+    datosGenJuri = datax;
+
+
+    var arrTem = datosGen1.concat(datosGen2);
+    var arrT = arrTem.concat(datosGenJuri);
+    todos = arrT;
+
+    console.log(todos);
 
     //console.log(datos);
   });
@@ -408,11 +386,11 @@ function datosGeneral(){
     //carga.hide();
     //console.log(arr);
     datos = datosxCategoria(arr);
+    datosGen1 = arr;
 
     //segunda seccion de carga de datos
     datosGeneralRescate();
-
-    datosJuridico();
+    
 
   });
 
@@ -503,12 +481,16 @@ function datosGeneralRescate(){
 
         for (el in arr){
 
-          var d = [arr[el][3] , arr[el][0] , arr[el][4] , arr[el][1] , arr[el][2] , arr[el][5] , arr[el][6]];
+          var d = [arr[el][3] , arr[el][0] , arr[el][4] , arr[el][1] +" "+ arr[el][2] +" "+ arr[el][5] +" "+ arr[el][6]];
           datax.push(d);
         }
 
         //console.log(datax);
         datos2 = datosxRescate(datax);
+
+        datosGen2 = datax;
+
+        datosJuridico();
 
     });
 
@@ -672,4 +654,84 @@ function datosxRescate(data){
    dormir: arrDormir,
    otros : arrOtros
     }
+}
+
+
+function busca(){
+
+
+  var selectedText = $("#busco").find("option:selected").text();
+    
+  var cad1 = selectedText;
+  var cad2 = $("#ubicacion").val();
+
+  var st1 = cad1.toLowerCase();
+  var st2 = cad2.toLowerCase();
+
+  console.log(st1 +"-->" + st2 );
+
+  arreglo = buscar(st1, st2);
+  console.log(arreglo);
+
+  SecPrin.hide();
+  carga.show();
+  carga.empty();
+  carga.html("Cargando...");
+  //datosJuridico();
+
+  datosCarga(arreglo.busca1, arreglo.busca2);
+
+}
+
+function buscar(cad1, cad2){
+
+  var arrBusca1 = [];
+  var arrBusca2 = [];
+
+
+
+  //var arrTem = datosGen1.concat(datosGen2);
+  //var arr = arrTem.concat(datosGenJuri);
+  //console.log(arr);
+  var arr = todos;
+
+
+  var flag = true;
+  if (cad1 == '' || cad2 == ''){
+    flag = false;
+    cad2 = "marcaparadescartarcadenavaciaenbusqueda+-´+{}{}{}||¬¬°°";
+  }
+
+
+  for (el in arr){
+
+  var ele1 = arr[el][1].toLowerCase();
+  var ele2 = arr[el][3].toLowerCase();
+
+  
+  
+  if (flag){
+
+    if (ele1.indexOf(cad1) >= 0 && ele2.indexOf(cad2) >= 0){
+
+      arrBusca1.push(arr[el]);
+      
+    }
+  }
+  else{
+
+    if (ele1.indexOf(cad1) >= 0 || ele2.indexOf(cad2) >= 0){
+
+      arrBusca2.push(arr[el]);
+      
+
+    }
+  }
+
+  }
+
+
+   return { busca1 : arrBusca1, busca2 : arrBusca2}
+
+
 }

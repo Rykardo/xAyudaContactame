@@ -1,175 +1,159 @@
 <html>
-  <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
-    <script
-    type="text/javascript"
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/vis.css">
     <script type="text/javascript" src="/index.js"></script>
 
-  </head>
-  
-  <body>
     
-    <div class="container-fluid">
-      
-      <div class="row text-center">
-        <div class="container-fluid titulo">
-          <div class="row">
-            <div class="col-sm-2 home">
-              <button type="button" class="btn btn-secondary" onclick="inicio()" id="botonInicio"><span class="ion-home"></span></button>
-            </div>
-            <div class="col-sm-6">
-              <h3>x Ayuda Contactame</h3>
-            </div>
-            <div class="col-sm-4">
-              <h6>Mexico 2017</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div id="scroll">
-        <span class="ion-chevron-up"></span>
-      </div>
 
-      <div id="cargando"></div>
+    
+</head>
 
-      <h3 style="color:#2e2e2e; text-align:center; margin-top:20px; ">¿Que necesitas?</h3>
-
-      <div class="row">
-        <div class="container-fluid inicio" id="SecInicio">
-          <div class="row fila1">
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteCarros()">
-                <span class="ion-android-car icono"></span>
-                Carro/Camioneta
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteTransportes()">
-                <span class="ion-android-bus icono"></span>
-                Transporte
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="marco" onclick="partePsico()">
-                <span class="ion-heart icono"></span>
-                Apoyo Emocional
-              </div>
-            </div>
-          </div>
-          
-          <div class="row fila1">
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteMedico()">
-                <span class="ion-medkit icono"></span>
-                Serv. Medicos
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteVarios()">
-                <span class="ion-wrench icono"></span>
-                Voluntarios/ Maquinaria
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteJuridico()">
-                <span class="ion-ios-book icono"></span>
-                Asesoria Juridica
-              </div>
-            </div>
-          </div>
-
-          <div class="row fila1">
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteVete()">
-                <span class="ion-ios-paw icono"></span>
-                Veterinarios
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteEduca()">
-                <span class="ion-edit icono"></span>
-                Educación
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteAlim()">
-                <span class="ion-android-restaurant icono"></span>
-                Alimentos
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="row fila1">
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteDormir()">
-                <span class="ion-coffee icono"></span>
-                Refugios/ Lugar para dormir
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="marco" onclick="parteOtros()">
-                <span class="ion-star icono"></span>
-                Distintas Ayudas
-              </div>
-            </div>
-            
-          </div>
-
-
-
-          
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="container-fluid informacion" id="informacionSec">
-          
-  
-        <!--Base par diseño de informacion-->
-
-          <div class="row justify-content-center informacionMarco">
-            
-            <div class="col-sm-5">
-              <div class="imagen">
-                <span class="ion-android-car"></span>
-              </div>
-            </div>
-            <div class="col-sm-5">
-              <div class="texto">
-              <h4>Titulo descriptivo</h4>
-              <p>Informacion relacionada en resumen del servicio</p>
-              <div class="infoCon">
-                <p>tel: 234234234234</p>
-                <p>tel: 234234234234</p>
-              </div>
-              </div>
-            </div>
-            <div class="separador"></div>
-          </div>
-          
-          
-          
-          
-        </div>
-      </div>
-      
+<body>
+    <header>
+        <h1>xAyudaContáctame</h1>
+        <button type="button" class="btn home" onclick="inicio()" id="botonInicio"><i class="ion-home"></i></button>
+        <button type="button" class="btn about"><i class="ion-ios-help-empty"></i></button>
+    </header>
+    <section class="hero">
+        <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-1">
+            <h6>Mexico 2017</h6>
+            <h2>xAyudaContáctame</h2>
+            <p>es una iniciativa para conectar directamente a personas que necesitan ayuda con aquellos que pueden dársela.</p> <a href="#">Comparte la iniciativa</a> </div> <img class="divisor" src="/images/divisor-top.png" alt=""> 
+    </section>
+    
+    <div class="md-container hidden">
+    <div class="md-content md-share">
+        <h4>Comparte en tus redes:</h4>
+        <br>
+        <button>facebook</button>
+        <button>twitter</button>
+    </div>
     </div>
     
-  </body>
+    
+    <section class="finder bg-white">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>Encuentra ayuda</h2>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="busco">Necesito</label>
+                            <select class="selectpicker" data-show-subtext="true" data-live-search="true" id="busco">
+                              
+                              <option data-subtext="Publico">Transporte</option>
+                              <option data-subtext="Apoyo Emocional">Apoyo</option>
+                              <option data-subtext="Personas o instituciones">Medico</option>
+                              <option data-subtext="Personas y materiales">Voluntarios</option>
+                              <option data-subtext="Aspectos legales">Asesoria</option>
+                              <option data-subtext="Aspectos legales">Abogados</option>
+                              <option data-subtext="Mascotas">Veterinario</option>
+                              <option data-subtext="Ayuda para niños">Educacion</option>
+                              <option data-subtext="Lugares o donaciones">Comida</option>
+                              <option data-subtext="Albergues">Refugio</option>
+                              <option data-subtext="Lugares/ instituciones">Comedor</option>
+                              <option data-subtext="Diferentes tipos">Insumos</option>
+                              <option data-subtext="Distintos">Medicamento</option>
+                              <option data-subtext="Vehiculos">Maquinaria</option>
+                              <option data-subtext="Asistencias diversas">Asistencia</option>
+                              <option data-subtext="Ayuda Emocional">Terapia</option>
+                              
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ubicacion"><span class="visible-xs">Estoy </span>en</label>
+                            <input type="text" class="form-control" id="ubicacion" placeholder=""> 
+                            <span class="help">ingresa tu estado, colonia o código postal</span>
+                            </div>
+                        <button class="btn btn-lg btn-default" onclick="busca(); return false;">Encontrar ayuda</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <div id="scroll"> <span class="ion-chevron-up"></span> </div>
+    <div id="cargando"></div>
+    <section id="SecInicio" class="categorias">
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteCarros()"> <span class="ion-android-car icono"></span> Carro/Camioneta </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteTransportes()"> <span class="ion-android-bus icono"></span> Transporte </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="partePsico()"> <span class="ion-heart icono"></span> Apoyo Emocional </div>
+            </div>
+        </div>
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteMedico()"> <span class="ion-medkit icono"></span> Serv. Medicos </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteVarios()"> <span class="ion-wrench icono"></span> Voluntarios/ Maquinaria </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteJuridico()"> <span class="ion-ios-book icono"></span> Asesoria Juridica </div>
+            </div>
+        </div>
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteVete()"> <span class="ion-ios-paw icono"></span> Veterinarios </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteEduca()"> <span class="ion-edit icono"></span> Educación </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteAlim()"> <span class="ion-android-restaurant icono"></span> Alimentos </div>
+            </div>
+        </div>
+        <div class="row fila1">
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteDormir()"> <span class="ion-coffee icono"></span> Refugios/ Lugar para dormir </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="marco" onclick="parteOtros()"> <span class="ion-star icono"></span> Distintas Ayudas </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- plantilla tarjeta de información-->
+    <section class="container-fluid informacion" id="informacionSec">
+        <div class="row">
+            <!--Base par diseño de informacion-->
+            <div class='col-md-4 justify-content-center informacionMarco'>
+                <div class="portlet">
+                    <div class='texto padded'>
+                        <h2 class="name">data[index][0]</h2>
+                        <p class="servicios">data[index][1]</p>
+                        <div class="list">
+                            <p><i class="ion-ios-location blue"></i> data[index][3]</p>
+                            <div class='infoCon'> <i class="ion-ios-telephone blue"></i> <span>data[index][2]</span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+ <div class="md-alpha hidden"></div>   
+</body>
 <html>

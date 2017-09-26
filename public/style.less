@@ -8,6 +8,10 @@
 .green{color:@green}
 .blue{color:@blue}
 
+*{
+    box-sizing: border-box;
+}
+
 .gradient{
     background: rgba(0,254,178,1);
 background: -moz-linear-gradient(top, rgba(0,254,178,1) 0%, rgba(3,209,209,1) 100%);
@@ -63,6 +67,13 @@ h1,h2,h3,h4,h5,h6{
     color:@blue;
 }
 
+.button,.btn,button,input,select, .form-control{
+    height:44px;
+    line-height:44px;
+    padding:0 12px; 
+}
+
+
 .button,.btn,button{
         .gradient-lr;
         border:none;
@@ -70,10 +81,14 @@ h1,h2,h3,h4,h5,h6{
         font-weight: bold;
         border-radius:0;
         box-shadow:0 3px 4px  rgba(1, 159, 159, 0.5);
-    &:active, &:focus{
-        outline:none;
+    
+    display: inline-block;
+    cursor:pointer;
+    &:active, &:focus, &:hover{
+        outline:none!important;
         box-shadow:0 3px 8px  rgba(1, 159, 159, 0.8);
-        
+        color:white !important;
+        text-shadow:0 0 3px fade(lighten(@blue,5%),10%);
     }
 }
 
@@ -122,6 +137,7 @@ header{
     position:relative;
     h1,h2,h3,h4,h5,h6{
         color:white;
+        margin:0;
     }
     .divisor{
         width:100%;
@@ -172,20 +188,57 @@ form{
     margin-bottom:30px;
 .form-group{
     text-align: left;
+    @media(max-width:767px){
+        label{
+            display: block;
+        }
+    }
+    input, .bootstrap-select{
+        width:100% !important;
+    }
     input{
+        width:100% !important;
         border:1px solid @blue;
         &:focus{
             border-color:@green;
             outline-color: @green;
         }
     }
+    .text-muted{
+        color:#e6e6e6;
+        color:darken(@blue,10%);
+    }
     .help{
         color:@blue;
         font-size:0.8em;
+        display: block;
     }
 }
     button{
         float:right;
+    }
+    @media(min-width:992px){
+        width: auto;
+        display: inline-block;
+        .form-group{
+            float:left;
+            margin-left:10px;
+            label{
+                display:inline;
+                float:left;
+                line-height:42px;
+                margin-right:7px;
+                font-size:1.3em;
+                font-weight: normal;
+            }
+            .bootstrap-select{
+                width:250px !important;
+            }
+            .form-control{
+                width:auto !important;
+                float:left;
+            }
+        }
     }
 }
 
@@ -220,6 +273,9 @@ form{
     padding-bottom:35px;
 }
 
-.hidden{
-    display:none;
+@media (max-width:991px){
+   .visible-xs-inline{
+        display:inline-block !important;
+    }
 }
+

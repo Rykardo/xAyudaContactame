@@ -6,6 +6,9 @@
 .blue {
   color: #03d1d1;
 }
+* {
+  box-sizing: border-box;
+}
 .gradient {
   background: #00feb2;
   background: -moz-linear-gradient(top, #00feb2 0%, #03d1d1 100%);
@@ -64,6 +67,16 @@ h6 {
 }
 .button,
 .btn,
+button,
+input,
+select,
+.form-control {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 12px;
+}
+.button,
+.btn,
 button {
   background: #03d1d1;
   background: -moz-linear-gradient(left, #03d1d1 0%, #00feb2 100%);
@@ -78,15 +91,22 @@ button {
   font-weight: bold;
   border-radius: 0;
   box-shadow: 0 3px 4px rgba(1, 159, 159, 0.5);
+  display: inline-block;
+  cursor: pointer;
 }
 .button:active,
 .btn:active,
 button:active,
 .button:focus,
 .btn:focus,
-button:focus {
-  outline: none;
+button:focus,
+.button:hover,
+.btn:hover,
+button:hover {
+  outline: none!important;
   box-shadow: 0 3px 8px rgba(1, 159, 159, 0.8);
+  color: white !important;
+  text-shadow: 0 0 3px rgba(3, 234, 234, 0.1);
 }
 section {
   padding-top: 25px;
@@ -147,6 +167,7 @@ header .about {
 .hero h5,
 .hero h6 {
   color: white;
+  margin: 0;
 }
 .hero .divisor {
   width: 100%;
@@ -191,19 +212,59 @@ form {
 form .form-group {
   text-align: left;
 }
+@media (max-width: 767px) {
+  form .form-group label {
+    display: block;
+  }
+}
+form .form-group input,
+form .form-group .bootstrap-select {
+  width: 100% !important;
+}
 form .form-group input {
+  width: 100% !important;
   border: 1px solid #03d1d1;
 }
 form .form-group input:focus {
   border-color: #00feb0;
   outline-color: #00feb0;
 }
+form .form-group .text-muted {
+  color: #e6e6e6;
+  color: #029f9f;
+}
 form .form-group .help {
   color: #03d1d1;
   font-size: 0.8em;
+  display: block;
 }
 form button {
   float: right;
+}
+@media (min-width: 992px) {
+  form {
+    width: auto;
+    display: inline-block;
+  }
+  form .form-group {
+    float: left;
+    margin-left: 10px;
+  }
+  form .form-group label {
+    display: inline;
+    float: left;
+    line-height: 42px;
+    margin-right: 7px;
+    font-size: 1.3em;
+    font-weight: normal;
+  }
+  form .form-group .bootstrap-select {
+    width: 250px !important;
+  }
+  form .form-group .form-control {
+    width: auto !important;
+    float: left;
+  }
 }
 .md-alpha {
   background: #00feb2;
@@ -240,6 +301,8 @@ form button {
   min-width: 250px;
   padding-bottom: 35px;
 }
-.hidden {
-  display: none;
+@media (max-width: 991px) {
+  .visible-xs-inline {
+    display: inline-block !important;
+  }
 }

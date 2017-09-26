@@ -3,92 +3,87 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="style.css">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="/vis.css">
     <script type="text/javascript" src="/index.js"></script>
-
-    
-
-    
 </head>
 
 <body>
+   
+       <div class="md-container hidden">
+        <div class="md-content md-share">
+            <h4>Comparte en tus redes:</h4>
+            <br>
+            <button>facebook</button>
+            <button>twitter</button>
+        </div>
+    </div>
     <header>
         <h1>xAyudaContáctame</h1>
         <button type="button" class="btn home" onclick="inicio()" id="botonInicio"><i class="ion-home"></i></button>
         <button type="button" class="btn about"><i class="ion-ios-help-empty"></i></button>
     </header>
     <section class="hero">
-        <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-1">
-            <h6>Mexico 2017</h6>
-            <h2>xAyudaContáctame</h2>
-            <p>es una iniciativa para conectar directamente a personas que necesitan ayuda con aquellos que pueden dársela.</p> <a href="#">Comparte la iniciativa</a> </div> <img class="divisor" src="/images/divisor-top.png" alt=""> 
-    </section>
-    
-    <div class="md-container hidden">
-    <div class="md-content md-share">
-        <h4>Comparte en tus redes:</h4>
-        <br>
-        <button>facebook</button>
-        <button>twitter</button>
-    </div>
-    </div>
-    
-    
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+                    <h6>México 2017</h6>
+                    <h2>xAyudaContáctame</h2>
+                    <div class="hidden">
+                        <p class="">es una iniciativa para conectar directamente a personas que necesitan ayuda con aquellos que pueden dársela.</p> <a href="#">Comparte la iniciativa</a> </div>
+                </div>
+            </div>
+        </div> <img class="divisor" src="images/divisor-top.png" alt=""> </section>
+
     <section class="finder bg-white">
         <div class="container text-center">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-xs-12">
                     <h2>Encuentra ayuda</h2>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
                     <form action="">
                         <div class="form-group">
                             <label for="busco">Necesito</label>
                             <select class="selectpicker" data-show-subtext="true" data-live-search="true" id="busco">
-                              
-                              <option data-subtext="Publico">Transporte</option>
-                              <option data-subtext="Apoyo Emocional">Apoyo</option>
-                              <option data-subtext="Personas o instituciones">Medico</option>
-                              <option data-subtext="Personas y materiales">Voluntarios</option>
-                              <option data-subtext="Aspectos legales">Asesoria</option>
-                              <option data-subtext="Aspectos legales">Abogados</option>
-                              <option data-subtext="Mascotas">Veterinario</option>
-                              <option data-subtext="Ayuda para niños">Educacion</option>
-                              <option data-subtext="Lugares o donaciones">Comida</option>
-                              <option data-subtext="Albergues">Refugio</option>
-                              <option data-subtext="Lugares/ instituciones">Comedor</option>
-                              <option data-subtext="Diferentes tipos">Insumos</option>
-                              <option data-subtext="Distintos">Medicamento</option>
-                              <option data-subtext="Vehiculos">Maquinaria</option>
-                              <option data-subtext="Asistencias diversas">Asistencia</option>
-                              <option data-subtext="Ayuda Emocional">Terapia</option>
-                              
+                                <option data-subtext="Publico">Transporte</option>
+                                <option data-subtext="Apoyo Emocional">Apoyo</option>
+                                <option data-subtext="Personas o instituciones">Medico</option>
+                                <option data-subtext="Personas y materiales">Voluntarios</option>
+                                <option data-subtext="Aspectos legales">Asesoria</option>
+                                <option data-subtext="Aspectos legales">Abogados</option>
+                                <option data-subtext="Mascotas">Veterinario</option>
+                                <option data-subtext="Ayuda para niños">Educacion</option>
+                                <option data-subtext="Lugares o donaciones">Comida</option>
+                                <option data-subtext="Albergues">Refugio</option>
+                                <option data-subtext="Lugares/ instituciones">Comedor</option>
+                                <option data-subtext="Diferentes tipos">Insumos</option>
+                                <option data-subtext="Distintos">Medicamento</option>
+                                <option data-subtext="Vehiculos">Maquinaria</option>
+                                <option data-subtext="Asistencias diversas">Asistencia</option>
+                                <option data-subtext="Ayuda Emocional">Terapia</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="ubicacion"><span class="visible-xs">Estoy </span>en</label>
-                            <input type="text" class="form-control" id="ubicacion" placeholder=""> 
-                            <span class="help">ingresa tu estado, colonia o código postal</span>
-                            </div>
-                        <button class="btn btn-lg btn-default" onclick="busca(); return false;">Encontrar ayuda</button>
+                            <label for="ubicacion"><span class="visible-xs-inline">Estoy</span> en</label>
+                            <input type="text" class="form-control" id="ubicacion" placeholder=""> <span class="help">Ingresa tu estado o colonia</span> </div>
+                        <button class="form-group btn btn-lg btn-default" onclick="busca(); return false;">Encontrar ayuda</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
     
-
+    
     <div id="scroll"> <span class="ion-chevron-up"></span> </div>
     <div id="cargando"></div>
     <section id="SecInicio" class="categorias">
@@ -134,7 +129,6 @@
             </div>
         </div>
     </section>
-    
     <!-- plantilla tarjeta de información-->
     <section class="container-fluid informacion" id="informacionSec">
         <div class="row">
@@ -153,7 +147,6 @@
             </div>
         </div>
     </section>
-    
- <div class="md-alpha hidden"></div>   
+    <div class="md-alpha hidden"></div>
 </body>
 <html>

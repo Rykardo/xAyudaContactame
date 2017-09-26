@@ -292,6 +292,7 @@ form .form-group {
 @media (max-width: 767px) {
   form .form-group label {
     display: block;
+    color: #95989A;
   }
 }
 form .form-group input,
@@ -363,6 +364,49 @@ form button {
 }
 .informacionMarco texto h4 {
   margin: 0;
+}
+.marco {
+  background-position: center -12px;
+  background-size: contain;
+  padding: 25px 15px;
+  box-shadow: 0 0 15px rgba(1, 159, 159, 0.2);
+}
+.marco:hover,
+.marco:active {
+  box-shadow: 0 0 15px rgba(1, 159, 159, 0.7);
+}
+.marco.carros {
+  background-image: url(images/carro.jpg);
+}
+.marco.transporte {
+  background-image: url(images/transporte.jpg);
+}
+.marco.psicologico {
+  background-image: url(images/psicologico.jpg);
+}
+.marco.medico {
+  background-image: url(images/medico.jpg);
+}
+.marco.varios {
+  background-image: url(images/voluntarios.jpg);
+}
+.marco.juridico {
+  background-image: url(images/juridico.jpg);
+}
+.marco.veterinario {
+  background-image: url(images/veterinario.jpg);
+}
+.marco.educacion {
+  background-image: url(images/educacion.jpg);
+}
+.marco.alimentos {
+  background-image: url(images/alimentos.jpg);
+}
+.marco.dormir {
+  background-image: url(images/dormir.jpg);
+}
+.marco.otros {
+  background-image: url(images/otros.jpg);
 }
 .md-alpha {
   background: #00feb2;

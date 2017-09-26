@@ -129,9 +129,11 @@
     </section>
     <!-- plantilla tarjeta de información-->
     
-    <section class="container-fluid informacion" >
-        <div class="row" id="informacionSec">
-            <!--Base par diseño de informacion-->
+    <section class="container-fluid informacion" id="informacionSec">
+    <!-- id="informacionSec" lo necesito en section en el row no me permite cambiar el display en js por la nota !important -->
+        <div class="row">
+            <!--Base par diseño de informacion
+            ** Este bloque no es importante , esto se reemplaza con lo que esta en index.js **
             <div class='col-md-4 justify-content-center informacionMarco'>
                 <div class="portlet">
                     <div class='texto padded text-left'>
@@ -144,6 +146,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </section>
     <div class="md-alpha hidden"></div>

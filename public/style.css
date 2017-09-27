@@ -162,6 +162,22 @@ button:focus,
 button:hover {
   color: white !important;
 }
+.btn.null,
+button.null,
+.button.null {
+  box-shadow: none;
+}
+.btn.null:active,
+button.null:active,
+.button.null:active,
+.btn.null:focus,
+button.null:focus,
+.button.null:focus,
+.btn.null:hover,
+button.null:hover,
+.button.null:hover {
+  box-shadow: none;
+}
 input.form-control {
   border: solid 1px #03d1d1;
 }
@@ -234,7 +250,7 @@ header .about {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00feb2', endColorstr='#03d1d1', GradientType=0);
   color: white;
   text-align: center;
-  padding: 72px 0 42px 0;
+  padding: 30px 0 42px 0;
   position: relative;
 }
 .hero h1,
@@ -267,6 +283,9 @@ a:hover {
   text-decoration: none;
   text-shadow: 0 0 5px rgba(1, 159, 159, 0.5);
 }
+.texto {
+  color: #95989a;
+}
 .texto i {
   font-size: 1.8em;
   position: absolute;
@@ -274,8 +293,10 @@ a:hover {
 }
 .texto .name {
   color: #03d1d1;
+  margin: 0;
 }
 .texto .servicios {
+  color: #95989a;
   font-size: 0.85em;
   font-weight: bold;
 }
@@ -366,10 +387,13 @@ form button {
   margin: 0;
 }
 .marco {
-  background-position: center -12px;
   background-size: contain;
   padding: 25px 15px;
   box-shadow: 0 0 15px rgba(1, 159, 159, 0.2);
+  background-repeat: no-repeat;
+  background-position: center top;
+  min-height: 150px;
+  position: relative;
 }
 .marco:hover,
 .marco:active {
@@ -387,7 +411,7 @@ form button {
 .marco.medico {
   background-image: url(images/medico.jpg);
 }
-.marco.varios {
+.marco.voluntarios {
   background-image: url(images/voluntarios.jpg);
 }
 .marco.juridico {
@@ -407,6 +431,14 @@ form button {
 }
 .marco.otros {
   background-image: url(images/otros.jpg);
+}
+.marco .title {
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 20px;
+  font-size: 1.2em;
+  width: 100%;
+  left: 0;
 }
 .md-alpha {
   background: #00feb2;
@@ -447,4 +479,8 @@ form button {
   .visible-xs-inline {
     display: inline-block !important;
   }
+}
+#informacionSec {
+  margin-right: -15px;
+  margin-left: -15px;
 }

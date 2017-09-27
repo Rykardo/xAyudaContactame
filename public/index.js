@@ -229,7 +229,7 @@ function datosCarga(data, data2){
       var base = 
     "<div class='col-md-4 justify-content-center informacionMarco'> " + 
     "<div class='portlet'> " + 
-    "<div class='texto padded'> " + 
+    "<div class='texto text-left padded'> " + 
     "<h4 class='name'> " + data[index][0] + "</h4> " + 
     "<p class='servicios'> " + data[index][1] +"</p> " + 
     "<div class='list'> " + 

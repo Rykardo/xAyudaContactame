@@ -70,19 +70,8 @@ html, body {
   width: 100%;
   clear: both;
 }
-.texto{
-  text-align: center;
-  padding: 20px;
-}
-.infoCon p{
-  font-size: 25px;
-  background-color: white;
-  color: #2e2e2e;
-  font-weight: bold;
-  border-radius: 5px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
+
+
 .separador{
   width: 80%;
   margin: 0 auto;

@@ -2,6 +2,7 @@
 @blue: #03D1D1;
 @green: #00FEB0;
 @gray: #EDEDED;
+@text: #95989A;
 .green {
     color: @green
 }
@@ -146,6 +147,17 @@ button{
     }
 }
 
+.btn,button,.button{
+    &.null{
+        box-shadow: none;
+        &:active,
+    &:focus,
+    &:hover {
+        box-shadow: none;
+    }
+    }
+}
+
 
 input.form-control{
     border:solid 1px @blue;
@@ -214,7 +226,7 @@ header {
     .gradient;
     color: white;
     text-align: center;
-    padding: 72px 0 42px 0;
+    padding: 30px 0 42px 0;
     position: relative;
     h1,
     h2,
@@ -251,6 +263,7 @@ a {
 }
 
 .texto {
+    color:@text;
     i {
         font-size: 1.8em;
         position: absolute;
@@ -258,8 +271,10 @@ a {
     }
     .name {
         color: @blue;
+        margin:0;
     }
     .servicios {
+        color:@text;
         font-size: 0.85em;
         font-weight: bold;
     }
@@ -358,10 +373,13 @@ form {
 }
 
 .marco{
-    background-position: center -12px;
     background-size: contain;
     padding:25px 15px;
     box-shadow: 0 0 15px rgba(1, 159, 159, 0.2);
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 150px;
+    position: relative;
     &:hover, &:active{
         box-shadow: 0 0 15px rgba(1, 159, 159, 0.7);
     }
@@ -377,7 +395,7 @@ form {
     &.medico{
         background-image: url(images/medico.jpg);
     }
-    &.varios{
+    &.voluntarios{
         background-image: url(images/voluntarios.jpg);
     }
     &.juridico{
@@ -397,6 +415,14 @@ form {
     }
     &.otros{
         background-image: url(images/otros.jpg);
+    }
+    .title{
+        margin-bottom: 0;
+        position: absolute;
+        bottom: 20px;
+        font-size: 1.2em;
+        width: 100%;
+        left: 0;
     }
 }
 
@@ -436,4 +462,9 @@ form {
     .visible-xs-inline {
         display: inline-block !important;
     }
+}
+
+#informacionSec{
+    margin-right: -15px;
+    margin-left: -15px;
 }
